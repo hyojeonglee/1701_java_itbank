@@ -1,0 +1,9 @@
+package kr.or.bank;
+
+public class Lotto {
+	private int [] lotto;
+	
+	public Lotto(int size) {
+		this.lotto = new int[size];
+	}
+}

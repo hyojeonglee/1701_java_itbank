@@ -1,4 +1,3 @@
-import java.util.Random;
 import kr.or.bank.Lotto;
 
 /*Lotto
@@ -15,7 +14,7 @@ import kr.or.bank.Lotto;
 public class LottoGenerator {
 	public static void main(String[] args) {
 		Lotto l = new Lotto(6);
-		int [] lotto = l.generateLotto();
+		l.generateLotto();
 		l.sortLotto();
 		l.printLotto();
 	}
