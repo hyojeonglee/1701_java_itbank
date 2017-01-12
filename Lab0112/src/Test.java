@@ -1,4 +1,4 @@
-import kr.or.bank.Emp; // *는 안 쓰는 것이 낫다.
+import kr.or.bank.Emp; // kr.or.bank.*보다는 이게 낫다. *는 최대한 쓰지 말기.
 
 public class Test {
 	public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class Test {
 				System.out.println(i + " x " + j + " = " + i*j);
 			}
 		}*/
+		
 		// import 안하는 경우 : kr.or.bank.Emp e = kr.or.bank.Emp();
 		Emp e = new Emp();
 		e.setAge(100);
@@ -25,6 +26,10 @@ public class Test {
 		System.out.println("Job : " + e.getJob());
 		
 		Emp e2 = new Emp("학생");
+		e2.setAge(18);
+		e2.setEname("이효원");
+		System.out.println(e2.toString()); // Object 클래스의 toString()은 객체의 주소값을 출력해준다.
+		// 사실 toString()은 오버라이딩해서(재정의) 멤버변수를 출력하는 역할로 많이 쓴다.
 	}
 
 }

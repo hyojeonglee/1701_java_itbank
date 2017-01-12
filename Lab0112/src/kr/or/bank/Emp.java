@@ -4,7 +4,8 @@ package kr.or.bank;
 public class Emp {
 	private String ename;
 	private int age;
-	private String job = "강사"; // 이렇게 쓰는 것보다 ***
+	private String job;
+	//private String job = "강사"; // 이렇게 쓰는 것보다 ***
 	
 	// Constructor(생성자) : 생성자도 함수이다.
 	// 목적 : 멤버 필드들을 초기화
@@ -29,10 +30,6 @@ public class Emp {
 		return this.age;
 	}
 	
-	public String getJob() {
-		return job;
-	}
-	
 	public void setAge(int age) {
 		// 조건 추가
 		if(age > 0)
@@ -40,4 +37,20 @@ public class Emp {
 		else
 			this.age = 0;
 	}
+	
+	public String getJob() {
+		return job;
+	}
+
+	@Override
+	public String toString() {
+		return "Emp [ename=" + ename + ", age=" + age + ", job=" + job + "]";
+	}
+	
+//	@Override
+//	public String toString() {
+//		// TODO Auto-generated method stub
+//		// return super.toString();
+//		return "Overriding";
+//	}
 }
