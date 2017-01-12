@@ -1,0 +1,37 @@
+import java.util.Random;
+
+/*Lotto
+1. 1~45까지의 난수를 발생시켜 6개의 값을 배열에 담아라.
+2. 배열에 있는 6개의 값은 중복되지 않는다.
+3. 배열에 있는 6개의 값이 작은 순으로 출력되도록
+4. class Lotto { 함수 }
+5. Lotto lotto = new Lotto 해보기
+
+45 1 15 34 2 25
+
+1 2 15 25 34 45*/
+public class LottoGenerator {
+	public static void main(String[] args) {
+		Random r = new Random();
+		int[] lotto = new int[6];
+		for(int i = 0 ; i < lotto.length ; i++) {
+			lotto[i] = r.nextInt(45)+1;
+			if(i > 0) {
+				for(int j = 0 ; j < i ; j++) {
+					if (lotto[j] == lotto[i])
+						lotto[i] = r.nextInt(45)+1;
+				}
+			}
+		}
+		for(int i = 0 ; i < lotto.length - 1 ; i++) {
+			if (lotto[i+1] < lotto[i]) {
+				int temp = lotto[i];
+				lotto[i] = lotto[i+1];
+				lotto[i+1] = temp;
+			}
+		}
+		for(int i = 0 ; i < lotto.length ; i++) {
+			System.out.println(lotto[i]);
+		}
+	}
+}
