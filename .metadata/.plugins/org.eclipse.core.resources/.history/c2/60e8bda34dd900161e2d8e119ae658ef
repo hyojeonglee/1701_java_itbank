@@ -1,0 +1,54 @@
+import kr.or.bank.Card;
+
+// 객체 지향 언어
+// 1. Method Overloading : 하나의 이름으로 여러가지 기능! 파라미터 갯수와 타입(순서) 바꾼다! (인터페이스)
+// 이때 리턴타입은 상관 없다.
+// Q. 개발자 입장에서 오버로딩(중복정의)를 왜 쓸까? 성능과는 상관이 없다. 편하게 쓰려고!
+
+class OverTest {
+	int add(int i) { 
+		return i + 100;
+	}
+	
+	int add(int i, int j) { // 인정
+		return i + j;
+	}
+	
+	String add(String s) { // 인정
+		return s;
+	}
+	
+	String add(String s, int i) { // 인정
+		return s+i;
+	}
+	
+	String add(int i, String s) { // 인정
+		return s+i;
+	}
+	
+	int[] add(int[] param) {
+		int[] target = new int[param.length];
+		for(int i = 0 ; i < param.length ; i++)
+			target[i] = param[i] + 1;
+		return target;
+	}
+	
+	Card add(Card c) {
+		return c;
+	}
+}
+
+public class Ex0113_OOP {
+	public static void main(String[] args) {
+		OverTest ot = new OverTest();
+		Card c = new Card();
+		Card c2 = ot.add(c);
+		// Q. 이 때 c와 c2의 주소는 같다.
+		c.equals(c2); // True
+		
+		// cf. c2.toString() 안 해도 c2만 써도 자동으로 해준다.
+		
+		Card c3 = ot.add(new Card()); // 이건 될까?
+		System.out.println(c3); // 되네
+	}
+}

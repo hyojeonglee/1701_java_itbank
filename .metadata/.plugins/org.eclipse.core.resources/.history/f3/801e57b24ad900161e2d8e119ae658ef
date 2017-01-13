@@ -1,0 +1,21 @@
+class StaticM {
+	int iv;
+	static int cv;
+	
+	void m() {
+		cv = 1000; // 일반 함수에서 static 자원 접근 가능
+	}
+	
+	static void sm() { // 끼리끼리 처리하면 문제 없음~
+		// iv = 100; static 함수에서 일반 자원 접근 불가
+	}
+}
+
+public class Ex0113_Static_Method {
+	public static void main(String[] args) {
+		int c = StaticM.cv;
+		StaticM.sm();
+	}
+}
+
+// static 함수의 의도?
