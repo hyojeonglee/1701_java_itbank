@@ -1,0 +1,35 @@
+
+public class Ex0113_Operators {
+	public static void main(String[] args) {
+		// <연산 규칙>
+		// 자바는 정수의 모든 연산을 int로 변환시킨다!
+		// byte + byte => int + int
+		byte b = 10;
+		byte c = 10;
+		// byte d = b + c; 안된다! 경고 메시지 : add cast to "byte"
+		// 해결방법
+		byte d = (byte)(b + c);
+		int e = b + c;
+		
+		// byte + short => int + int
+		// char + char => int + int
+		
+		// 범위가 큰 것을 따라간다.
+		// float + int => float + float
+		// float + long => float + float
+		// float + double => double + double
+		
+		// 1 ~ 10까지 짝수의 합 구하기
+		int sum = 0;
+		for(int i = 1 ; i < 11 ; i++) {
+			if (i % 2 == 0)
+				sum += i;
+		}
+		System.out.println(sum);
+		
+		// 암기! if문 대신 3항연산자!
+		int p = 10;
+		int k = -10;
+		int result = (p == 10)? p : k;
+	}
+}
