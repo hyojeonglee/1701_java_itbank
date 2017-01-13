@@ -1,0 +1,6 @@
+
+public class Ex01_Variables {
+	public static void main(String [] args) {
+		System.out.println("È«\"±æ\"µ¿");
+	}
+}
