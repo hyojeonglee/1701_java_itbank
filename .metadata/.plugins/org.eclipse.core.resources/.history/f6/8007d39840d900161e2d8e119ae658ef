@@ -1,0 +1,11 @@
+package kr.or.bank;
+
+public class AirPlane {
+	private String aname;
+	private String anum;
+	
+	public AirPlane(String aname, String anum) {
+		this.aname = aname;
+		this.anum = anum;
+	}
+}

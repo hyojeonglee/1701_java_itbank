@@ -2,8 +2,9 @@ import kr.or.bank.Car;
 
 public class Ex0113_Variables {
 	public static void main(String [] args) {
-		
-		String str = "홍길동"; // 클래스 (사용 시 일반 타입)
+		String str = "홍길동";
+		// 실제로 클래스이다! 사용 시에는 일반 타입처럼 사용하고 heap 영역에 적재!
+		// cf. static => stack 영역에 적재!
 		String s = "A";
 		s += "B";
 		s += "C";
