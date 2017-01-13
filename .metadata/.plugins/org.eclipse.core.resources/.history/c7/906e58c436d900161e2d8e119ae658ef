@@ -24,14 +24,12 @@ public class Ex0113_Operators2 {
 		System.out.println("점수 : " + score);
 		System.out.println("결과 : " + result);
 		
-		// Point1. 문자형 숫자 > 숫자
+		// Point! 문자형 숫자 > 숫자
 		String str = "123";
 		int i = Integer.parseInt(str);
 		// Float.parseFloat(str);
-		
-		// Point2. 숫자 > 문자
+		// 숫자 > 문자
 		int j = 1000;
 		String str2 = String.valueOf(j);
-		System.out.println(str2);
 	}
 }
