@@ -1,0 +1,21 @@
+package kr.or.bank;
+
+public class AirPlane {
+	private String aname;
+	private String anum;
+	static int allnum;
+	
+	public AirPlane(String aname, String anum) {
+		this.aname = aname;
+		this.anum = anum;
+		allnum++;
+	}
+	
+	public void printAirPlane() {
+		System.out.printf("이름 : %s 번호 : %s", this.aname, this.anum);
+	}
+	
+	public void printAllNum() {
+		System.out.println("비행기 총 대수는 " + allnum + "입니다.");
+	}
+}

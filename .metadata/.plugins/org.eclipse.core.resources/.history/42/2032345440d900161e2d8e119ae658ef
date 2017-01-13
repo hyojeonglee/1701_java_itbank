@@ -1,0 +1,9 @@
+import kr.or.bank.Emp;
+
+// 클래스 변수는 초기화 안해도 되지만, 지역변수는 초기화 필수
+public class Ex0113_Ref_type {
+	public static void main(String[] args) {
+		Emp e = new Emp(1000, "이효정", "01022224545");
+		e.empPrint();
+	}
+}

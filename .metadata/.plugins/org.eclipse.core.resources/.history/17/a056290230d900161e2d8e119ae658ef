@@ -1,0 +1,6 @@
+package kr.or.bank;
+
+public class Car {
+	int ;
+	String color;
+}
