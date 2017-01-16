@@ -103,11 +103,28 @@ class Triangle extends Shape {
 		for(int i = 0 ; i < point.length ; i++)
 			this.point[i] = point[i];
 	}
+
+	@Override
+	void draw() {
+		// TODO Auto-generated method stub
+		System.out.println("삼각형 그리기");
+		System.out.println("x : y : z" + this.point[0] + ":" + this.point[1] + ":" + this.point[2]);
+	}
 }
 
 public class Ex0113_Inherit {
 	public static void main(String[] args) {
 		Circle circle = new Circle();
 		circle.draw();
+		
+		Triangle t = new Triangle();
+		t.draw();
+		
+		Point[] p = {new Point(19, 33), new Point(44, 66), new Point(5, 66)};
+		Triangle t2 = new Triangle(p);
+		t.draw();
 	}
 }
+
+// 여러 개의 클래스가 있을 때 각각의 클래스 관계 파악 (상속 or 포함)
+// MVC (Model > DTO, DAO, Service)
