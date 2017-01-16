@@ -27,7 +27,6 @@
 // 일반화(공통) : Shape, Point
 // 구체화(특수화) : Circle(반지름), Triangle(점이 3개) ...
 
-<<<<<<< HEAD
 // http://www.nextree.co.kr/p6753
 
 class Shape {
@@ -80,10 +79,6 @@ class Circle extends Shape {
 		System.out.println("반지름 : " + this.r);
 		System.out.println("x : y" + this.center.x + ":" + this.center.y);
 	}
-=======
-// 과제. isa, hasa 시나리오 각각 하나씩 작성해오기!
-public class Ex0113_Inherit {
->>>>>>> origin/master
 
 //	public void CircleDraw() {
 //		System.out.println("원그리기");
