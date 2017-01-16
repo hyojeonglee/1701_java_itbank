@@ -27,6 +27,39 @@
 // 일반화(공통) : Shape, Point
 // 구체화(특수화) : Circle(반지름), Triangle(점이 3개) ...
 
+// http://www.nextree.co.kr/p6753
+
+class Shape {
+	String color = "blue";
+	void draw() {
+		System.out.println("그리다");
+	}
+}
+
+class Point {
+	private int x;
+	private int y;
+	
+	Point() {
+		// *this의 종류 : 객체 자신을 가리키는 this, 생성자를 호출하는 this
+		// 여기서는 아래 Point(int x, int y)를 호출한다.
+		this(1, 1); 
+	}
+	
+	Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+}
+
+// 원은 도형이다. (성립)
+// 원은 점을 가지고 있다. (성립)
+class Circle extends Shape {
+	// 원은 구체화, 특수화된 것!
+	int r; // 특수화된 특성! 반지름!
+	
+}
+
 public class Ex0113_Inherit {
 
 }
