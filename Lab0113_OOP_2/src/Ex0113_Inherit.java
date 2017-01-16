@@ -37,8 +37,8 @@ class Shape {
 }
 
 class Point {
-	private int x;
-	private int y;
+	int x;
+	int y;
 	
 	Point() {
 		// *this의 종류 : 객체 자신을 가리키는 this, 생성자를 호출하는 this
@@ -57,9 +57,57 @@ class Point {
 class Circle extends Shape {
 	// 원은 구체화, 특수화된 것!
 	int r; // 특수화된 특성! 반지름!
+	Point center;
 	
+	public Circle() {
+		// this.r = 100;
+		// this.center = new Point(10, 10);
+		this(100, new Point(10, 10));
+	}
+	
+	public Circle(int r, Point center) {
+		this.r = r;
+		this.center = center;
+	}
+	// 마우스 우클릭 - Source - Override/implement method
+	// 이 때 @Override는 함수명이 제대로 쓰여있는지 검사해준다. > 쓰는 습관 들이기! 
+	@Override
+	void draw() {
+		// TODO Auto-generated method stub
+		// super.draw();
+		System.out.println("원그리기");
+		System.out.println("반지름 : " + this.r);
+		System.out.println("x : y" + this.center.x + ":" + this.center.y);
+	}
+
+//	public void CircleDraw() {
+//		System.out.println("원그리기");
+//		System.out.println("반지름 : " + this.r);
+//		System.out.println("x : y" + this.center.x + ":" + this.center.y);
+//	}
+}
+
+// 문제 1. 삼각형 만들기
+// 삼각형은 도형이다
+// 삼각형은 세 개의 점을 가지고 있다.
+// 고정 크기, 변동 크기
+
+class Triangle extends Shape {
+	Point[] point;
+	
+	public Triangle() {
+		this(new Point[3]);
+	}
+	
+	public Triangle(Point[] point) {
+		for(int i = 0 ; i < point.length ; i++)
+			this.point[i] = point[i];
+	}
 }
 
 public class Ex0113_Inherit {
-
+	public static void main(String[] args) {
+		Circle circle = new Circle();
+		circle.draw();
+	}
 }
