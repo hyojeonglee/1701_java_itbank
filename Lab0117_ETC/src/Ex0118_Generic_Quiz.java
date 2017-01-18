@@ -46,6 +46,8 @@ public class Ex0118_Generic_Quiz {
 			}
 		}
 		
+		//----------------Iterator----------------//
+		// 열거된 자원에 대한 표준적인 접근 방법이다.
 		// Iterator, ListIterator > ArrayList가 iterator를 구현하고 있다~
 		// iterator interface > Collection interface > ArrayList class가 구현!
 		
