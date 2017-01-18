@@ -9,7 +9,7 @@ import java.util.Properties;
 
 // 웹사이트 하단의 관리자 email 주소 (page가 200개 일때 한번에 관리할 수 있다.)
 // 또는 경로나 버전 정보
-// admin@master.com > admin@star.com
+// admin@master.com > admin@star.com로 변경하고 싶을 때!
 
 public class Ex0118_Properties {
 	public static void main(String[] args) {
