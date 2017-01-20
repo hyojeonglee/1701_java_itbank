@@ -1,4 +1,4 @@
-package kr.or.bank;
+
 
 // single process + single thread
 // JVM > stack 메모리 하나만 사용!
