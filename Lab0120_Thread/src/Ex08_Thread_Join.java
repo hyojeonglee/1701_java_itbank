@@ -5,6 +5,7 @@ import org.omg.Messaging.SyncScopeHelper;
 // 결과도 알 수 있다.
 // ex) racing game
 
+
 class Thread_Join extends Thread {
 	@Override
 	public void run() {
