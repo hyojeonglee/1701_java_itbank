@@ -20,7 +20,7 @@ public class Ex03_TCP_Server {
 		 // ★Socket은 내부적으로 Stream을 구현하고 있다.
 		 OutputStream out = socket.getOutputStream();
 		 DataOutputStream dos = new DataOutputStream(out);
-		 dos.writeUTF("str"); // 접속한 클라이언트에 write 보내기
+		 dos.writeUTF(str); // 접속한 클라이언트에 write 보내기
 		 //////////////////////////////////////////////
 		 
 		 System.out.println("서버 종료");
