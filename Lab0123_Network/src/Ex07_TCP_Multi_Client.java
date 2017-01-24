@@ -48,7 +48,7 @@ public class Ex07_TCP_Multi_Client extends JFrame implements ActionListener , Ru
 		 txtinput.addActionListener(this);
 		 
 		 try{
-			 Socket socket = new Socket("192.168.137.1", 9999);
+			 Socket socket = new Socket("192.168.101.1", 9999);
 			 in = new DataInputStream(socket.getInputStream());
 			 out = new DataOutputStream(socket.getOutputStream());
 			 //서버와 연결

@@ -125,47 +125,46 @@ public class Ex07_TCP_Multi_Server {
 				ClientMap.put(name, out); // Map<이름,출력객체>
 				System.out.println("서버 모니터링 : 현재 접속자는 " + ClientMap.size() + "명");
 
-				// 추가기능(대화기능)
-				while (in != null) 
-				{
-						String msg = in.readUTF();
-						// 채팅창에> /접속자 > Client Enter
-						// 접속한 회원 목록 출력
-						if (msg.startsWith("/")) 
-						{
-							if (msg.trim().equals("/접속자"))
-							{
-								// 모든 사용자 (별도의 함수)
-								out.writeUTF(showUserList(name));
-							}
-						}else if(msg.startsWith("/귓속말"))
-						{
-							String[] msgArr = msg.split("", 3);
-							if (msgArr == null || msg.length() < 3) {
-							// 채팅창 >/귓속말 홍길동 방가방가
-							out.writeUTF("HELP : 귓속말 사용법 :\r\n /귓속말 [상대방이름] [보낼메시지]");
-							}else{
-									// [0]>/귓속말 , [1]>상대방이름 ,[2]>보낼메시지
-									String toName = msgArr[1];
-									String toMsg = msgArr[2];
-									if (ClientMap.containsKey(toName))
-									{
-										// 메시지 보내기
-										// 특정 상대방에게만 채팅 내용 전달
-										// 기능 별도의 함수
-										SendToMsg(name, toName, toMsg);
-									}else
-									{
-										out.writeUTF("입력하신 사용자가 없습니다");
-									}
-								}
+				//추가 기능(대화기능)
+				while(in != null){
+					String msg = in.readUTF();
+					
+					//채팅창에 >/접속자 
+					//접속한 회원 목록 출력
+					if(msg.startsWith("/")){
+						if(msg.trim().equals("/접속자")){
+							out.writeUTF(showUserList(name));
+						}else if(msg.startsWith("/귓속말")){
+								String[] msgArr = msg.split(" ",3);
+								if(msgArr == null || msgArr.length < 3){
+									out.writeUTF("HELP : 귓속말 사용법 :\r\n /귓속말 [상대방이름] [보낼메시지]");
+									// /궛속말 홍길동 방가방가
+								}else{
+										String toName = msgArr[1]; //홍길동
+										String toMsg  = msgArr[2]; //방가방가
+										if(ClientMap.containsKey(toName)){
+											//메시지 보내기
+											//특정상대방에게만 채팅 내용 전달
+											SendToMsg(name, toName, toMsg);
+										}else{
+											out.writeUTF("입력하신 사용자가 없습니다");
+										}
+								 }
 						}else{
-								SendAllMsg("[" + name + "]" + msg);
-						     }
-				 }
+							 	out.writeUTF("잘못된 명령어 입니다");
+							 }
+					}else{
+						SendAllMsg("[" + name + "]" + msg);
+					}
+				}//while end
 
 			} catch (Exception e) {
 				System.out.println("Thread run 예외발생" + e.getMessage());
+			} finally {
+				// Client 종료(퇴장), 예외 발생 시
+				ClientMap.remove(name);
+				SendAllMsg(name + "님이 퇴장하셨습니다.");
+				System.out.println("서버 모니터링 : 현재 접속자 수는 " + ClientMap.size() + "명입니다.");
 			}
 		}
 	}
