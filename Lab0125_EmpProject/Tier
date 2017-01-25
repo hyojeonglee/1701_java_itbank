@@ -1,0 +1,12 @@
+<사원관리>
+
+1. 분류
+	DAO : db 연동
+	DTO(VO) : db 담음, db 쪽 테이블과 1:1 매핑되게 class 설계
+	UTILS : 필요한 API 처리
+	Program.java
+	
+cf. 위 분류는 절대적인 것은 아니다. 
+
+2. 할일
+	Dept라는 부서테이블로 CRUD 작업하기(insert, ...)
